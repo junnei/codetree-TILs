@@ -7,6 +7,7 @@ visited = [0] * n
 
 for x, y in vertex:
     matrix[x-1][y-1] = 1
+    matrix[y-1][x-1] = 1
 
 def getAvailable(x):
     result = []
