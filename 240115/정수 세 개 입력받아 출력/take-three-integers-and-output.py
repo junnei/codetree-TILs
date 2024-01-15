@@ -2,7 +2,7 @@ import sys
 
 input = sys.stdin.readline
 
-a, b = [int(input().split()) for _ in range(2)]
+a, b = list(map(int,input().split()))
 c = int(input())
 
 print(a, b, c)
