@@ -8,4 +8,5 @@ if a <= b and a <= c:
     print(a)
 elif b <= c:
     print(b)
-print(c)
+else:
+    print(c)
