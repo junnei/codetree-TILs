@@ -10,4 +10,6 @@ for i in range(1, n+1):
     for j in range(1, i+1):
         print(chr(cnt), end="")
         cnt += 1
+        if cnt == 65+26:
+            cnt = 65
     print()
