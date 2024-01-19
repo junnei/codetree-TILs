@@ -7,8 +7,8 @@ prod = n
 cnt = 0
 
 for i in range(1,n+1):
-    prod /= i
+    prod //= i
     cnt+=1
-    if prod < 1:
+    if prod <= 1:
         break
 print(cnt)
