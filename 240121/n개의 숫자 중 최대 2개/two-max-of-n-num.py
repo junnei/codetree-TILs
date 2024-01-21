@@ -9,9 +9,8 @@ max_val = -sys.maxsize
 max_limit = -sys.maxsize
 
 for num in arr:
-    if num > max_limit:
-        if num > max_val:
-            max_val, max_limit = num, max_val
-        else:
-            max_limit = num
+    if num > max_val:
+        max_val, max_limit = num, max_val
+    elif num > max_limit:
+        max_limit = num
 print(max_val, max_limit)
