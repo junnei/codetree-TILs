@@ -14,6 +14,4 @@ arr2 = [
 ]
 
 for i in range(n):
-    for j in range(n):
-        print(arr[i][j] * arr2[i][j], end =" ")
-    print()
+    print(*[arr[i][j] * arr2[i][j] for j in range(n)])
