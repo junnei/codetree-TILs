@@ -7,8 +7,7 @@ arr = list(map(int, input().split()))
 
 min_diff = 99
 
-for i in range(n):
-    for j in range(i+1, n):
-        if abs(arr[i] - arr[j]) < min_diff:
-            min_diff = abs(arr[i] - arr[j])
+for i in range(1, n):
+    if arr[i] - arr[i-1] < min_diff:
+        min_diff = arr[i] - arr[i-1]
 print(min_diff)
