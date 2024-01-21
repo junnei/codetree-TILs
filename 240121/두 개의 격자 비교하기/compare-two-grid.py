@@ -12,14 +12,9 @@ arr = [
 ]
 
 result = [
-    [0] * m
-    for _ in range(n)
+    [0 if arr[0][i][j] == arr[1][i][j] else 1 for j in range(m)]
+    for i in range(n)
 ]
-
-for i in range(n):
-    for j in range(m):
-        if arr[0][i][j] != arr[1][i][j]:
-            result[i][j] = 1
 
 for i in range(n):
     print(*result[i])
