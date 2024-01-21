@@ -4,8 +4,8 @@ input = sys.stdin.readline
 
 arr = list(map(int, input().split()))
 
-maximin_val = 1
-minimax_val = 1000
+maximin_val = 1000
+minimax_val = 1
 
 for num in arr:
     if num < 500 and num > minimax_val:
