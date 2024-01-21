@@ -10,6 +10,5 @@ for idx, num in enumerate(arr):
     if num == 2:
         cnt+=1
         if cnt >= 3:
-            cnt = idx
+            print(idx+1)
             break
-print(cnt+1)
