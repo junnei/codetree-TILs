@@ -9,16 +9,15 @@ arr.sort(reverse=True)
 max_val = arr[0]
 is_solo = True
 
-
 for num in arr[1:]:
     if max_val == num:
         is_solo = False
-    elif is_solo == True:
-        print(max_val)
-        break
-    else:
+    elif is_solo == False:
         max_val = num
         is_solo = True
+    else:
+        print(max_val)
+        break
 
 if is_solo == False:
     print(-1)
