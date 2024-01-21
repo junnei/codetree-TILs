@@ -6,7 +6,7 @@ arr = list(map(int, input().split()))
 result = [0]*10
 
 for num in arr:
-    if arr == 0:
+    if num == 0:
         break
     result[((num%100)//10)] += 1
     
