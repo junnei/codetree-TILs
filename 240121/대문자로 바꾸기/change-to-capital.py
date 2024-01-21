@@ -9,4 +9,4 @@ arr = [
 ]
 
 for i in range(n):
-    print(*[char.upper() for char in arr[i]])
+    print(*[chr(ord(char)-32) for char in arr[i]])
