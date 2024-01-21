@@ -2,11 +2,14 @@ import sys
 
 input = sys.stdin.readline
 
+def uppercase(c: str):
+    return c.upper()
+
 n = 5
 arr = [
-    list(input().split())
+    list(map(uppercase, input().split()))
     for _ in range(n)
 ]
 
 for i in range(n):
-    print(*[chr(ord(char)-32) for char in arr[i]])
+    print(*arr[i])
