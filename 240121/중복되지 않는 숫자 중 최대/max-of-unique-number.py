@@ -16,8 +16,9 @@ for num in arr[1:]:
         max_val = num
         is_solo = True
     else:
-        print(max_val)
         break
 
-if is_solo == False:
+if is_solo:
+    print(max_val)
+else:
     print(-1)
