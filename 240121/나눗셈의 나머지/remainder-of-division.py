@@ -3,7 +3,7 @@ import sys
 input = sys.stdin.readline
 
 a, b = map(int, input().split())
-arr = [0]*11
+arr = [0]*10
 
 while a>1:
     arr[a%b] += 1
