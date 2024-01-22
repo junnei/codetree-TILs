@@ -3,15 +3,12 @@ import sys
 input = sys.stdin.readline
 
 string = input().rstrip()
+cnt = [0, 0]
+for i in range(len(string)-1):
+    if string[i] == 'e':
+        if string[i+1] == 'e':
+            cnt[0] += 1
+        elif string[i+1] == 'b':
+            cnt[1] += 1
 
-def find_all(a_str, sub):
-    result = []
-    start = 0
-    while True:
-        start = a_str.find(sub, start)
-        if start == -1:
-            return result
-        result.append(start)
-        start += 1
-
-print(len(find_all(string, 'ee')), len(find_all(string, 'eb')))
+print(*cnt)
