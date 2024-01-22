@@ -4,5 +4,7 @@ input = sys.stdin.readline
 
 string = input().rstrip()
 
-for char in string[-1::-2]:
+len_str_is_even = len(string) % 2 +1
+
+for char in string[-len_str_is_even::-2]:
     print(char, end="")
