@@ -2,7 +2,6 @@ import sys
 
 input = sys.stdin.readline
 
-str1 = input().rstrip()
-str2 = input().rstrip()
+arr = [input().rstrip() for _ in range(2)]
 
-print('true' if str1+str2 == str2+str1 else 'false')
+print('true' if ''.join(arr) == ''.join(arr[::-1]) else 'false')
