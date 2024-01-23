@@ -11,7 +11,7 @@ board = [
     ]
 
 def is_available(a, b):
-    if a > n or b > n:
+    if a > n or b > m:
         return False
     if board[a][b] == 0:
         return False
