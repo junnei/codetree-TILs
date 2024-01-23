@@ -10,13 +10,15 @@ for i in range(m):
     a, b = map(int, input().split())
     board[a].append(b)
     board[b].append(a)
-
+cnt = 0
 def dfs(x):
+    global cnt
     for i in board[x]:
         if not is_visited[i]:
             is_visited[i] = True
+            cnt += 1
             dfs(i)
-
+            
+is_visited[1] = True
 dfs(1)
-
-print(sum(is_visited[2:]))
+print(cnt)
