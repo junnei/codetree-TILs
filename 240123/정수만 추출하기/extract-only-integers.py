@@ -14,5 +14,5 @@ for string in arr:
             found = True
             break
     if found == False:
-        result += int(string[:i])
+        result += int(string)
 print(result)
