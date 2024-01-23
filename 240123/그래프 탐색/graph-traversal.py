@@ -12,11 +12,10 @@ for i in range(m):
     board[b].append(a)
 
 def dfs(x):
-    if is_visited[x] == True:
-        return
-    is_visited[x] = True
     for i in board[x]:
-        dfs(i)
+        if not is_visited[i]:
+            is_visited[i] = True
+            dfs(i)
 
 dfs(1)
 
