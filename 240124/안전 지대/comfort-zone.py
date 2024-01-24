@@ -32,7 +32,7 @@ def dfs(a, b, k):
 
 result = [0] * 100
 
-min_k = min(list(map(min, board)))
+min_k = min(list(map(lambda x : min(x[1:]), board[1:])))
 max_k = max(list(map(max, board)))
 
 for k in range(min_k, max_k+1):
