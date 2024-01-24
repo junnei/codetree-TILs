@@ -20,9 +20,8 @@ for i in range(3):
 print(len(solo_win))
 
 duo_win = set()
-
 for a in range(len(chars)):
-    for b in range(i + 1, len(chars)):
+    for b in range(a + 1, len(chars)):
         is_win = False
         for i in range(3):
             found = True
