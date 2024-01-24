@@ -1,4 +1,5 @@
 import sys
+sys.setrecursionlimit(2500)
 
 input = sys.stdin.readline
 
@@ -27,11 +28,10 @@ def dfs(a, b, k):
             visited[x][y] = True
             dfs(x, y, k)
 
+result = [0] * 100
+
 min_k = max(min(list(map(min, board))) - 1, 1)
 max_k = max(list(map(max, board)))
-
-max_cnt = -1
-answer_k = 0
 
 for k in range(min_k, max_k + 1):
     cnt = 0
@@ -41,11 +41,9 @@ for k in range(min_k, max_k + 1):
                 visited[i][j] = True
                 cnt += 1
                 dfs(i, j, k)
-    if cnt > max_cnt:
-        answer_k, max_cnt = k, cnt
-
-    for i in range(n):
-        for j in range(m):
-            visited[i][j] = False
+    result[k - 1] = cnt
+    visited = [[False for _ in range(m)] for _ in range(n)]
     
-print(answer_k, max_cnt)
+max_areas = max(result)
+
+print(result.index(max_areas) + 1, max_areas)
