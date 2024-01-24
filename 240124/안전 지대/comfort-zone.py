@@ -29,10 +29,10 @@ def dfs(a, b, k):
 
 result = [0] * 100
 
-min_k = min(list(map(min, board)))
+min_k = min(list(map(min, board))) - 1
 max_k = max(list(map(max, board)))
 
-for k in range(min_k, max_k+1):
+for k in range(min_k, max_k + 1):
     cnt = 0
     for i in range(n):
         for j in range(m):
@@ -42,6 +42,7 @@ for k in range(min_k, max_k+1):
                 dfs(i, j, k)
     result[k - 1] = cnt
     visited = [[False for _ in range(m)] for _ in range(n)]
+    
 max_areas = max(result)
 
 print(result.index(max_areas) + 1, max_areas)
