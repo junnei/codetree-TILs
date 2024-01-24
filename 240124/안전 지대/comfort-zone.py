@@ -3,22 +3,19 @@ import sys
 input = sys.stdin.readline
 
 n, m = map(int, input().rstrip().split())
-board = [[0] * (m+1)] + [[0] + list(map(int, input().rstrip().split())) for _ in range(n)]
+board = [
+    list(map(int, input().rstrip().split())) for _ in range(n)
+    ]
 
-visited = [[False for _ in range(m+1)] for _ in range(n+1)]
+visited = [[False for _ in range(m)] for _ in range(n)]
 
 def is_range(a, b):
-    if (1<=a and a<=n) and (1<=b and b<=m):
-        return True
-    else:
-        return False
+    return (0 <= a and a < n) and (0 <= b and b < m)
 
 def is_available(a, b, k):
     if not is_range(a, b):
         return False
-    if board[a][b] <= k:
-        return False
-    if visited[a][b] == True:
+    if visited[a][b] or board[a][b] <= k:
         return False
     return True
 
@@ -32,19 +29,19 @@ def dfs(a, b, k):
 
 result = [0] * 100
 
-min_k = min(list(map(lambda x : min(x[1:]), board[1:])) + [1])
+min_k = min(list(map(min, board)))
 max_k = max(list(map(max, board)))
 
 for k in range(min_k, max_k+1):
     cnt = 0
-    for i in range(1, n+1):
-        for j in range(1, m+1):
+    for i in range(n):
+        for j in range(m):
             if is_available(i, j, k):
                 visited[i][j] = True
                 cnt += 1
                 dfs(i, j, k)
     result[k - 1] = cnt
-    visited = [[False for _ in range(m+1)] for _ in range(n+1)]
+    visited = [[False for _ in range(m)] for _ in range(n)]
 max_areas = max(result)
 
 print(result.index(max_areas) + 1, max_areas)
