@@ -30,7 +30,7 @@ def dfs(a, b, k):
             visited[x][y] = True
             dfs(x, y, k)
 
-result = [0] * 51
+result = [0] * 50
 
 for k in range(1, 50+1):
     cnt = 0
@@ -41,9 +41,9 @@ for k in range(1, 50+1):
                 visited[i][j] = True
                 cnt += 1
                 dfs(i, j, k)
-    result[k] = cnt
+    result[k - 1] = cnt
     visited = [[False for _ in range(m+1)] for _ in range(n+1)]
-    
+
 max_areas = max(result)
 
-print(result.index(max_areas), max_areas)
+print(result.index(max_areas) + 1, max_areas)
