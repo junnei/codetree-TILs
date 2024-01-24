@@ -13,5 +13,5 @@ elif m == 2:
 
 elif m == 3:
     for i in all_cases:
-        if len(set(i)) != 1:
+        if len(set(i)) == n:
             print(*i)
