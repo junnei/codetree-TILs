@@ -32,9 +32,10 @@ def dfs(a, b, k):
 
 result = [0] * 100
 
-for k in range(1, 100+1):
-    cnt = 0
+max_k = max(list(map(max, board)))
 
+for k in range(1, max_k+1):
+    cnt = 0
     for i in range(1, n+1):
         for j in range(1, m+1):
             if is_available(i, j, k):
