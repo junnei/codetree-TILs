@@ -30,9 +30,9 @@ def dfs(a, b, k):
             visited[x][y] = True
             dfs(x, y, k)
 
-result = [0] * 50
+result = [0] * 100
 
-for k in range(1, 50+1):
+for k in range(1, 100+1):
     cnt = 0
 
     for i in range(1, n+1):
