@@ -18,4 +18,4 @@ def is_leap_year(n):
     return False
 
 n = int(input())
-print(str(is_leap_year(n)).lower())
+print(str(is_leap_year2(n)).lower())
