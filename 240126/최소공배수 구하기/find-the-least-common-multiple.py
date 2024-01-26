@@ -1,5 +1,3 @@
-from functools import reduce
-
 def get_gcd(n, m):
     gcd = 0
     for i in range(1, min(n, m) + 1):
