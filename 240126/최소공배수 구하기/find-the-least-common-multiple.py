@@ -1,3 +1,6 @@
+import sys
+sys.setrecursionlimit(20000)
+
 from functools import reduce
 
 def get_minimax(n, m, data):
