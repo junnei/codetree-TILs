@@ -11,7 +11,10 @@ def get_minimax(n, m, data):
             get_minimax(n//i, m//i, data+[i])
             break
     if found == False:
-        print(n * m * reduce(lambda x, y: x * y, data))
+        if len(data) != 0:
+            print(n * m * reduce(lambda x, y: x * y, data))
+        else:
+            print(n * m)
 
 n, m = map(int, input().split())
 get_minimax(n, m, [])
