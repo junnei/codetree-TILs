@@ -4,7 +4,7 @@ class User:
         self.level = level
 
 user1 = User()
-user2 = User(*tuple(input().split()))
+user2 = User(*input().split())
 
 print(f"user {user1.id} lv {user1.level}")
 print(f"user {user2.id} lv {user2.level}")
