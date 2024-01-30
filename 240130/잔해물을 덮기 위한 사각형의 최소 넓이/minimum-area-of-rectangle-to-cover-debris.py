@@ -11,5 +11,17 @@ for idx, (x1, y1, x2, y2) in enumerate(datas):
             result[x][y] = 1 - idx
 
 
+min_x, min_y, max_x, max_y = 2000, 2000, 0, 0
+for i, row in enumerate(result):
+    for j, val in enumerate(row):
+        if val == 1:
+            if i < min_x:
+                min_x = i
+            if i > max_x:
+                max_x = i
+            if j < min_y:
+                min_y = j
+            if j > max_y:
+                max_y = j
 
-print(sum([1 if 1 in row else 0 for row in result]) * max([sum(row) for row in result]))
+print((max_x-min_x+1)*(max_y-min_y+1))
