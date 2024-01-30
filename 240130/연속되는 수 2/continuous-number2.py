@@ -11,4 +11,7 @@ for i in range(1, n):
         if cnt > max_cnt:
             max_cnt = cnt
         cnt = 1
+
+if cnt > max_cnt:
+    max_cnt = cnt
 print(max_cnt)
