@@ -5,10 +5,12 @@ answer = 0
 cnt = 1
 
 for i in range(n):
-    if i>=1 and arr[i-1] > t and arr[i] > t and arr[i]>arr[i-1]:
+    if i>=1 and arr[i] > t and arr[i]>arr[i-1]:
         cnt += 1
-    else:
+    elif arr[i] > 3:
         cnt = 1
+    else:
+        cnt = 0
     
     if cnt > answer:
         answer = cnt
