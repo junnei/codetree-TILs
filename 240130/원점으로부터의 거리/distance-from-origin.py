@@ -10,7 +10,7 @@ for i in range(1, n+1):
     x, y = input().split()
     datas.append(Data(i, x, y))
 
-datas.sort(lambda x : (x.x*x.x + x.y*x.y, i))
+datas.sort(lambda x : (abs(x.x) + abs(x.y), i))
 
 for data in datas:
     print(data.i)
