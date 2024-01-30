@@ -3,12 +3,12 @@ r, c, d = input().split()
 
 directions = {
     'R': 0,
-    'U': 1,
-    'L': 2,
-    'D': 3
+    'D': 1,
+    'U': 2,
+    'L': 3
 }
-dxs = [0, 1, 0, -1]
-dys = [1, 0, -1, 0]
+dxs = [0, 1, -1, 0]
+dys = [1, 0, 0, -1]
 
 def is_range(x, y):
     return 1 <= x and x <= n and 1 <= y and y <= n
@@ -21,5 +21,5 @@ for i in range(1, t+1):
     if is_range(nx, ny):
         r, c = nx, ny
     else:
-        index = 2 - index
+        index = 3 - index
 print(r, c)
