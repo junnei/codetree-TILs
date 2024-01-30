@@ -25,7 +25,7 @@ def is_range(x, y):
     return 1<=x and x<=n and 1<=y and y<=n
 
 cnt = 0
-while True:
+for _ in range(1000000):
     if not is_range(x, y):
         break
     cnt += 1
