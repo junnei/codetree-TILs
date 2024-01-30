@@ -6,12 +6,12 @@ result = [0 for _ in range(2*idx+1)]
 
 for val, command in datas:
     if command == "L":
-        for i in range(idx-int(val)+1, idx+1):
-            result[i] = 1
+        for i in range(int(val)):
+            result[idx-i] = 1
         idx-=int(val)-1
     else:
-        for i in range(idx, idx+int(val)):
-            result[i] = 2
+        for i in range(int(val)):
+            result[idx+i] = 2
         idx+=int(val)-1
 
 sum_val = [0, 0, 0]
