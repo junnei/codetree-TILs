@@ -6,7 +6,7 @@ k = int(input()) - 1
 
 dir_num, index = k // n, k % n
 dxys = [[1, 0], [0, -1], [-1, 0], [0, 1]]
-start_point = [[1, 1+index], [1+index, 3], [3, 3-index], [3-index, 1]]
+start_point = [[1, 1+index], [1+index, n], [n, n-index], [n-index, 1]]
 x, y = start_point[dir_num]
 dx, dy = dxys[dir_num]
 
