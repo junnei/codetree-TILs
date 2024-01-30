@@ -19,12 +19,8 @@ b = b_moves.pop(0)
 cnt = 0
 while True:
     if a[1] <= 0:
-        if len(a_moves) == 0:
-            break
         a = a_moves.pop(0)
     if b[1] <= 0:
-        if len(b_moves) == 0:
-            break
         b = b_moves.pop(0)
     
     cur_a += a[0]
