@@ -15,32 +15,21 @@ dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
 
 index = 0
-cnt = 1
 
 def is_range(x, y):
     return 0 <= x and x < n and 0 <= y and y < m
 
-def colorize(x, y):
-    global cnt
-    global index
-    if is_range(x, y) and arr[x][y] == 0:
-        arr[x][y] = cnt
-        cnt += 1
-        for dx, dy in zip(dxs[index:]+dxs[:index], dys[index:]+dys[:index]):
-            nx, ny = x + dx, y + dy
-            if is_range(nx, ny) and arr[nx][ny] == 0:
-                return nx, ny
-            else:
-                index = (index + 1) % 4
-
-    return False
-
 x, y = 0, 0
-while True:
-    work = colorize(x, y)
-    if work == False:
-        break
-    x, y = work
+arr[x][y] = 1
+
+for i in range(2, n*m+1):
+    nx, ny = x + dxs[index], y + dys[index]
+
+    if not (is_range(nx, ny) and arr[nx][ny] == 0):
+        index = (index + 1) % 4
+    
+    x, y = x + dxs[index], y + dys[index]
+    arr[x][y] = i
 
 for col in arr:
     print(*col)
