@@ -1,0 +1,15 @@
+n, t = map(int, input().split())
+arr = list(map(int, input().split()))
+
+answer = 0
+cnt = 1
+
+for i in range(n):
+    if i>=1 and arr[i-1] > t and arr[i] > t and arr[i]>arr[i-1]:
+        cnt += 1
+    else:
+        cnt = 1
+    
+    if cnt > answer:
+        answer = cnt
+print(answer)
