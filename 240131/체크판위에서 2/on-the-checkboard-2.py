@@ -13,6 +13,7 @@ def start(x, y, color, n):
     global cnt
     if n == 3:
         cnt += 1
+        return
     for i in range(x+1, r):
         for j in range(y+1, c):
             if arr[i][j] != color:
