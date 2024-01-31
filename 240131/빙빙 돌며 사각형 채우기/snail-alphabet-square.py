@@ -11,6 +11,10 @@ def in_range(x, y):
 def move(x, y, direction, cnt):
     arr[x][y] = chr(cnt)
     nx, ny = x + dxs[direction], y + dys[direction]
+
+    if cnt >= ord("Z"):
+        cnt = ord("A") - 1
+        
     if in_range(nx, ny) and arr[nx][ny] == 0:
         return nx, ny, direction, cnt + 1
     else:
