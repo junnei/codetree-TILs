@@ -4,36 +4,40 @@ arr = [input() for _ in range(n)]
 
 start_num = int(input())
 
-def is_range(x, y):
+def in_range(x, y):
     return 0<=x and x<n and 0<=y and y<n
-
-dxs = [1, 0, -1, 0]
-dys = [0, -1, 0, 1]
 
 def initialize(num):
     if num <= n:
         return 0, num - 1, 0
     elif num <= 2*n:
-        return 1, n - 1, (num - n) - 1
+        return (num - n) - 1, n - 1, 1
     elif num <= 3*n:
-        return 2, n - (num - 2*n), n - 1
+        return n - 1, n - (num - 2*n), 2
     else:
-        return 3, 0, n - (num - 3*n)
+        return n - (num - 3*n), 0, 3
 
-direction, x, y = initialize(start_num)
-dx, dy = dxs[direction], dys[direction]
+def move(x, y, direction):
+    nd = rotate_dict[arr[x][y]][direction]
+    nx, ny = x + dxs[nd], y + dys[nd]
+    return nx, ny, nd
 
-cnt = 0
+dxs = [1, 0, -1, 0]
+dys = [0, -1, 0, 1]
 
-def move(x, y, dx, dy):
-    global cnt
-    x, y = x + dx, y + dy
-    if is_range(x, y):
-        dx, dy = dxs[3-direction], dys[3-direction]
-        move(x, y, dx, dy)
+rotate_dict = {
+    "/" : [1, 0, 3, 2],
+    "\\" : [3, 2, 1, 0]
+}
+
+def simulate(x, y, direction):
+    cnt = 0
+    while in_range(x, y):
+        x, y, direction = move(x, y, direction)
         cnt += 1
+    return cnt
 
-initialize(start_num)
-move(x, y, dx, dy)
+x, y, direction = initialize(start_num)
+answer = simulate(x, y, direction)
 
-print(cnt)
+print(answer)
