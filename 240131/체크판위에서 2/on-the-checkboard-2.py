@@ -12,7 +12,8 @@ cnt = 0
 def start(x, y, color, n):
     global cnt
     if n == 3:
-        cnt += 1
+        if x == r - 1 and y == c - 1:
+            cnt += 1
         return
     for i in range(x+1, r):
         for j in range(y+1, c):
