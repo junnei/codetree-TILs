@@ -28,9 +28,10 @@ dys = [-1, 0, 1, 0]
 
 def simulate(x, y, direction, cnt):
     global answer
-    while in_range(x, y) and cnt <= t:
+    while in_range(x, y) and cnt < t:
         x, y, direction, cnt = move(x, y, direction, cnt)
     answer += arr[x][y]
+
 answer = 0
 x, y, direction = n//2, n//2, 1
 simulate(x, y, direction, 0)
