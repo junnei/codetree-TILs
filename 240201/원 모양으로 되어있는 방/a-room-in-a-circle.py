@@ -11,8 +11,8 @@ min_val = sys.maxsize
 def get_min_distance(start):
     sum_val = 0
     for i in range(n):
-        distance = i-start if i>=start else n-start+i
-        sum_val += arr[i] * distance
+        index = (start + i) % n
+        sum_val += arr[index] * i
     return sum_val
 
 for i in range(n):
