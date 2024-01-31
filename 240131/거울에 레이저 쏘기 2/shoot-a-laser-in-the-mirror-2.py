@@ -1,26 +1,39 @@
 n = int(input())
 
-arr = [list(input()) for _ in range(n)]
+arr = [input() for _ in range(n)]
 
-k = int(input()) - 1
-
-dir_num, index = k // n, k % n
-dxys = [[1, 0], [0, -1], [-1, 0], [0, 1]]
-start_point = [[1, 1+index], [1+index, n], [n, n-index], [n-index, 1]]
-x, y = start_point[dir_num]
-dx, dy = dxys[dir_num]
+start_num = int(input())
 
 def is_range(x, y):
-    return 1<=x and x<=n and 1<=y and y<=n
+    return 0<=x and x<n and 0<=y and y<n
+
+dxs = [1, 0, -1, 0]
+dys = [0, -1, 0, 1]
+
+def initialize(num):
+    if num <= n:
+        return 0, num - 1, 0
+    elif num <= 2*n:
+        return 1, n - 1, (num - n) - 1
+    elif num <= 3*n:
+        return 2, n - (num - 2*n), n - 1
+    else:
+        return 3, 0, n - (num - 3*n)
+
+direction, x, y = initialize(start_num)
+dx, dy = dxs[direction], dys[direction]
 
 cnt = 0
-for _ in range(1000):
-    if not is_range(x, y):
-        break
-    cnt += 1
-    if arr[x-1][y-1] == "\\":
-        dx, dy = dy, dx
-    else:
-        dx, dy = -dy, -dx
+
+def move(x, y, dx, dy):
+    global cnt
     x, y = x + dx, y + dy
+    if is_range(x, y):
+        dx, dy = dxs[3-direction], dys[3-direction]
+        move(x, y, dx, dy)
+        cnt += 1
+
+initialize(start_num)
+move(x, y, dx, dy)
+
 print(cnt)
