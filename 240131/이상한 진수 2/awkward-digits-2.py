@@ -1,9 +1,15 @@
 n = list(input())
 
+found = False
+
 for i in range(len(n)):
     if n[i] == '0':
         n[i] = '1'
+        found = True
         break
+
+if not found:
+    n[-1] = '0'
 
 result = 0
 
