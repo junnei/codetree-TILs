@@ -17,9 +17,8 @@ import sys
 
 answer = sys.maxsize
 for i in range(1, n-1):
-    popped = arr.pop(i)
-    result = get_min_distance(arr)
+    n_arr = arr[:i] + arr[i+1:]
+    result = get_min_distance(n_arr)
     if result < answer:
         answer = result
-    arr = arr[:i] + [popped] + arr[i:]
 print(answer)
