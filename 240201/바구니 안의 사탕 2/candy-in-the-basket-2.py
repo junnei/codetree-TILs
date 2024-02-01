@@ -15,7 +15,7 @@ MIN_INT = -sys.maxsize
 
 max_val = MIN_INT
 
-for i in range(k, MAX_POS-k):
+for i in range(min(50, k), max(51, MAX_POS-k)):
     cnt = sum(arr[i-k:i+k+1])
     if cnt > max_val:
         max_val = cnt
