@@ -22,6 +22,9 @@ cnt = 0
 for i in range(1, MAX_NUM):
     for j in range(1, MAX_NUM):
         for k in range(1, MAX_NUM):
+            if i==j or j==k or k==i:
+                continue
+                
             found = True
             for num, cnt1, cnt2 in arr:
                 if get_count(str(num),str(i)+str(j)+str(k)) != (cnt1, cnt2):
