@@ -7,7 +7,7 @@ arr = [0 for _ in range(MAX_POS)]
 
 for i in range(n):
     val, pos = map(int, input().split())
-    arr[pos] = val
+    arr[pos] += val
 
 import sys
 
