@@ -15,20 +15,25 @@ size = 3
 
 for i in range(n*n-size*2 + 1):
     for j in range(i+size, n*n-size + 1):
+        found = True
+
         sum_val = 0
         for k in range(size):
             if in_range(i//n, i%n + k):
                 sum_val += arr[i//n][i%n+k]
             else:
                 sum_val = 0
+                found = False
                 break
-        if sum_val:
+
+        if found:
             for k in range(size):
                 if in_range(j//n, j%n + k):
                     sum_val += arr[j//n][j%n+k]
                 else:
                     sum_val = 0
+                    found = False
                     break
-        if sum_val > max_val:
+        if found and sum_val > max_val:
             max_val = sum_val
 print(max_val)
