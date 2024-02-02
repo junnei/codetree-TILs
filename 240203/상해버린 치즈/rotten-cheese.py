@@ -27,4 +27,14 @@ for ill_p, ill_t in ills:
             break
         cheeze.add(eat_m)
     answer = answer & cheeze
-print(len(answer))
+
+cnt = 0
+for eat in eats:
+    found = False
+    for m, t in eat:
+        if m in answer:
+            found = True
+            break
+    if found:
+        cnt += 1
+print(cnt)
