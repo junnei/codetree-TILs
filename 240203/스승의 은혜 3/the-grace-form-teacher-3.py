@@ -15,7 +15,7 @@ for i in range(n):
     cnt = 0
     for j in range(n):
         sum_val += temp[j][0] + temp[j][1]
-        if sum_val >= b:
+        if sum_val > b:
             break
         cnt += 1
     max_val = max(max_val, cnt)
