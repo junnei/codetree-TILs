@@ -1,7 +1,10 @@
 x, y = map(int, input().split())
 
 def is_magic_number(n):
-    return len(set(str(n))) == 2
+    numbers = [0] * 10
+    for i in str(n):
+        numbers[int(i)] += 1
+    return (sum(numbers) - max(numbers) == 1)
 cnt = 0
 for i in range(x, y+1):
     if is_magic_number(i):
