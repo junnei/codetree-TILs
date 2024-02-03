@@ -14,9 +14,7 @@ for dx, dy in zip(dxs, dys):
         for y in list(combinations(range(11), dy)):
             found = True
             for i, j in arr:
-                if i in x or j in y:
-                    pass
-                else:
+                if not (i in x or j in y):
                     found = False
                     break
             if found:
