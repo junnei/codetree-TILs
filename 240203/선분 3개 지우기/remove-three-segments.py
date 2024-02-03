@@ -8,7 +8,7 @@ for i in range(n):
     for j in range(i+1, n):
         for k in range(j+1, n):
             found = True
-            line = [False] * n
+            line = [False] * 100
             for idx in range(n):
                 if idx == i or idx == j or idx == k:
                     continue
