@@ -5,10 +5,11 @@ arr = [
 ]
 
 max_val = 0
-
+import copy
 for i in range(n):
-    temp = arr[:]
+    temp = copy.deepcopy(arr)
     temp[i][0] //= 2
+    
     temp.sort(lambda x : x[0]+x[1])
 
     sum_val = 0
