@@ -3,14 +3,18 @@ arr = list(map(int, input().split()))
 
 from itertools import combinations
 
+max_val = max(arr)
 
-min_val = 10000
-for blocks in combinations(range(1,n),m-1):
-    last_index = 0
-    max_sum = 0
-    for block in list(blocks)+[n]:
-        sum_val = sum(arr[last_index:block])
-        last_index = block
-        max_sum = max(max_sum, sum_val)
-    min_val = min(min_val, max_sum)
-print(min_val)
+for limit in range(5000):
+    if max_val > limit:
+        continue
+    sum_val = 0
+    cnt = 0
+    for i in range(n):
+        sum_val = sum_val + arr[i]
+        if sum_val > limit:
+            cnt += 1
+            sum_val = arr[i]
+    if cnt <= m-1:
+        print(limit)
+        break
