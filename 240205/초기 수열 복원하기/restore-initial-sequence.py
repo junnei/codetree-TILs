@@ -9,7 +9,7 @@ def solution():
         result = [start_num]
         for i in range(n-1):
             num = arr[i] - result[i]
-            if num < 0 or num in result:
+            if num <= 0 or num in result:
                 found = False
                 break
             result.append(num)
