@@ -7,9 +7,11 @@ arr = [
 max_val = 0
 max_int = 0
 
+
+
 for i in range(n):
     num = arr[i]
-    d = 0
+    d = 1
     j = 1
     cnt = 0
     while d <= k:
@@ -21,7 +23,7 @@ for i in range(n):
         else:
             d += 1
         j += 1
-
+    
     if cnt > max_val:
         max_val = cnt
         max_int = num
