@@ -2,7 +2,7 @@ n = int(input())
 arr = list(map(int, list(input())))
 
 
-def get_max_dist(arr):
+def get_max_dist_idx(arr):
     dist = [0] * n
 
     cnt = 0
@@ -19,12 +19,16 @@ def get_max_dist(arr):
         else:
             cnt += 1
             dist[i] = cnt
-    return max(dist)
+    
+    return dist.index(max(dist))
 
 
-max_val = 0
+arr[get_max_dist_idx(arr)] = 1
+dist = []
+last_index = -1
 for i in range(n):
-    if arr[i] == 0:
-        val = get_max_dist(arr[:i] + [1] + arr[i+1:])
-        max_val = max(max_val, val)
-print(max_val)
+    if arr[i] == 1:
+        if last_index != -1:
+            dist.append(i - last_index)
+        last_index = i
+print(min(dist))
