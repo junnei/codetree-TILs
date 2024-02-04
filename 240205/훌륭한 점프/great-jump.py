@@ -6,10 +6,10 @@ MAX_NUM = 100
 answer = 0
 
 for i in range(1, MAX_NUM+1):
-    cnt = 0
-    if arr[0] > i:
+    if arr[0] > i or arr[-1] > i:
         continue
-    
+
+    cnt = 0
     possible = True
     for num in arr:
         if num <= i:
