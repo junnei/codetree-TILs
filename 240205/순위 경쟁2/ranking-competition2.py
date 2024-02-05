@@ -12,10 +12,10 @@ for c, s in arr:
     state = 0
     if score[0] < score[1]:
         state = 1
-    elif score[0] == score[1]:
+    elif score[0] > score[1]:
         state = 2
     else:
-        state = 3
+        state = 0
     if state != last_state:
         last_state = state
         cnt += 1
