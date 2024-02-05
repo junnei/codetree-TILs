@@ -1,23 +1,20 @@
 n = int(input())
 arr = list(map(int, input().split()))
 
-board = [
-    []
-    for _ in range(n)
-]
-for idx, num in enumerate(arr):
-    board[num].append(idx)
-
-
+board = [0] * 101
+ 
+for i in range(n):
+    if board[arr[i]] == 0:
+        board[arr[i]] = i + 1
+    elif board[arr[i]] != -1:
+        board[arr[i]] = -1
+        
 found = False
 for count in board:
-    if len(count) == 0:
+    if count == 0:
         continue
     else:
         if found:
-            if len(count)==1:
-                print(count[0]+1)
-            else:
-                print(-1)
-        else:
-            found = True
+            print(count)
+            break
+        found = True
