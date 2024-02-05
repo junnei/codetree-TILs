@@ -1,14 +1,16 @@
 x = int(input())
-import sys
-sys.setrecursionlimit(10000)
-def move(d, v, t):
-    if d == x and v == 1:
-        return t
-    if v <= 0:
-        return sys.maxsize
-    if d >= x:
-        return sys.maxsize
 
-    min_time = min(move(d+v, v-1, t+1), move(d+v, v, t+1), move(d+v, v+1, t+1))
-    return min_time
-print(move(1, 1, 1))
+d = 1
+v = 1
+t = 1
+
+while d < x:
+    t += 1
+    
+    if d + v + v*(v+1)//2 <= x: 
+        v += 1
+    elif d + v + v*(v-1)//2 > x:
+        v -= 1
+    d += v
+
+print(t)
