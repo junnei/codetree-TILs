@@ -16,11 +16,13 @@ for i in range(n):
 
 last_index = n - 1 - last_index
 
-max_val = max(dist)
-if max_val//2 >= first_index and max_val//2 >= last_index:
-    val = dist.pop(dist.index(max_val))
-    dist.extend([val-val//2, val//2])
-    print(min(dist))
+
+if len(dist) > 0:
+    max_val = max(dist)
+    if max_val//2 >= first_index and max_val//2 >= last_index:
+        val = dist.pop(dist.index(max_val))
+        dist.extend([val-val//2, val//2])
+        print(min(dist))
 else:
     new_dist = max(first_index, last_index)
     print(min(dist+[new_dist]))
