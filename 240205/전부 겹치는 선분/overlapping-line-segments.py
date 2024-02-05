@@ -7,9 +7,9 @@ arr = [
 def solution():
     for i in range(1, 101):
         for a, b in arr:
-            if a <= i <= b:
-                return True
-    return False
+            if a > i or i > b:
+                return False
+    return True
 
 if solution():
     print("Yes")
