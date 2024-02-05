@@ -8,6 +8,6 @@ for i in range(n):
         continue
     else:
         found = arr.index(i)
-        arr[i], arr[found] = arr[found], arr[i]
-        cnt += 1
+        arr[i:found+1] = [arr[found]]+arr[i:found]
+        cnt += found - i
 print(cnt)
