@@ -4,6 +4,10 @@ arr = list(map(int, input().split()))
 cnt = 0
 max_val = 0
 
+import sys
+if arr == sorted(arr):
+    print(0)
+    sys.exit()
 for i in range(n):
     val = arr[0]
     if val > max_val:
