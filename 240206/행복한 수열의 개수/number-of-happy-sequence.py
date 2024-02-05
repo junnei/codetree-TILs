@@ -1,23 +1,26 @@
 n, m = map(int, input().split())
 arr = [
-    input().split()
+    list(map(int, input().split()))
     for _ in range(n)
 ]
 
+
+def is_sub_list(sub, arr):
+    num = len(arr) - len(sub) + 1
+    for i in range(num):
+        if sub == arr[i:i+len(sub)]:
+            return True
+    return False
+
 cnt = 0
 for i in range(n):
-    line = ''.join(arr[i])
     for j in range(n-m+1):
-        sub = ''.join([arr[i][j]] * m)
-        if sub in line:
+        if is_sub_list([arr[i][j]] * m, arr[i]):
             cnt += 1
             break
     
-    row = ''.join([j[i] for j in arr])
-    
     for j in range(n-m+1):
-        sub = ''.join([arr[j][i]] * m)
-        if sub in row:
+        if is_sub_list([arr[j][i]] * m, [j[i] for j in arr]):
             cnt += 1
             break
 print(cnt)
