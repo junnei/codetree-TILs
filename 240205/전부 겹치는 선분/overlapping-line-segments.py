@@ -6,10 +6,13 @@ arr = [
 
 def solution():
     for i in range(1, 101):
+        found = True
         for a, b in arr:
             if a > i or i > b:
-                return False
-    return True
+                found = False
+        if found:
+            return True
+    return False
 
 if solution():
     print("Yes")
