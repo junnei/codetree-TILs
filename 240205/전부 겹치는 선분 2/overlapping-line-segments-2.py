@@ -9,7 +9,7 @@ def solution(arr):
     max_start = 0
     for a, b in arr:
         min_end = min(min_end, b)
-        max_start = max(max_start, b)
+        max_start = max(max_start, a)
         
     if max_start <= min_end:
         return True
