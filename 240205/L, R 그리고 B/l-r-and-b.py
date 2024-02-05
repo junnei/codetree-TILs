@@ -15,6 +15,6 @@ for i in range(n):
 count = 0
 if (l[0] == b[0] == r[0] and (l[1]-r[1])*(b[1]-r[1]) < 0) \
 or (l[1] == b[1] == r[1] and (l[0]-r[0])*(b[0]-r[0]) < 0):
-    count += 3
+    count += 2
 
 print(abs(l[0]-b[0]) + abs(l[1]-b[1]) - 1 + count)
