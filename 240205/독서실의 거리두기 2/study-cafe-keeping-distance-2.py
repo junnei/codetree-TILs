@@ -23,6 +23,6 @@ if len(dist) > 0:
         val = dist.pop(dist.index(max_val))
         dist.extend([val-val//2, val//2])
         print(min(dist))
-else:
-    new_dist = max(first_index, last_index)
-    print(min(dist+[new_dist]))
+    else:
+        new_dist = max(first_index, last_index)
+        print(min(dist+[new_dist]))
