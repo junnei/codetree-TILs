@@ -4,7 +4,7 @@ arr = [
     for _ in range(n)
 ]
 
-max_size = 0
+max_size = -1
 
 for x1 in range(n):
     for x2 in range(x1+1, n+1):
