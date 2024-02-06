@@ -26,6 +26,6 @@ def get_score(a, b, k):
 max_val = 0
 for i in range(n):
     for j in range(n):
-        for k in range(n):
+        for k in range(n+1):
             max_val = max(max_val, get_score(i, j, k))
 print(max_val)
