@@ -21,7 +21,7 @@ def get_max_num(a, b):
     max_val = 0
     for i in range(1, n):
         for j in range(1, n):
-            if 0 <= a-(i+j) < n and max(i, j) <= b < n-max(i, j):
+            if 0 <= a-(i+j) < n and j <= b < n-i:
                 max_val = max(max_val, get_sum_num(a, b, i, j))
     return max_val
 
