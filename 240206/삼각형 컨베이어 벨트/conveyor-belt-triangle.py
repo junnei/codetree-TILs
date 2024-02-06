@@ -4,7 +4,7 @@ arr = [
     for _ in range(3)
 ]
 
-t %= n*2
+t %= n*3
 for i in range(t):
     arr = [[arr[(i-1)%3][-1]] + arr[i][:-1] for i in range(3)]
 
