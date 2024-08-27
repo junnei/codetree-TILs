@@ -11,7 +11,8 @@ dp = [
 ]
 
 for coin in coins:
-    dp[coin] = 1
+    if coin <= m:
+        dp[coin] = 1
 
 for i in range(1, m+1):
     for j in range(1, i):
