@@ -1,5 +1,9 @@
 n, m = map(int, input().split())
-coins = list(map(int, input().split()))
+coins = [
+    coin for coin in map(int, input().split())
+    if coin <= m
+]
+    
 
 import sys
 INT_MAX = sys.maxsize
@@ -11,15 +15,15 @@ dp = [
 ]
 
 for coin in coins:
-    if coin <= m:
-        dp[coin] = 1
+    dp[coin] = 1
 
 for i in range(1, m+1):
-    for j in range(1, i):
-        if dp[j] == INT_MAX:
+    for coin in coins:
+        if 0 >= i - coin:
             continue
-        for coin in coins:
-            if j + coin == i:
-                dp[i] = min(dp[i], dp[j] + 1)
+        if dp[i - coin] == INT_MAX:
+            continue
+        
+        dp[i] = min(dp[i], dp[i-coin] + 1)
 
 print(-1 if dp[-1] == INT_MAX else dp[-1])
