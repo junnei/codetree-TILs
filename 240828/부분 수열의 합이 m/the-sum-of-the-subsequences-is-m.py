@@ -9,6 +9,8 @@ dp = [
 ]
 
 for num in nums:
+    if num > m:
+        continue
     for i in range(m, num, -1) :
         if dp[i-num] != INT_MAX:
             dp[i] = min(dp[i], dp[i-num] + 1)
